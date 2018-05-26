@@ -1,0 +1,50 @@
+{
+    "name": "trackless",
+    "version": "1.0.0",
+    "description": "Add a Google Analytics opt-out button to your site",
+    "main": "dist/index.js",
+    "types": "index.d.ts",
+    "unpkg": "dist/trackless.js",
+    "repository": "git@github.com:ascorbic/trackless.git",
+    "author": "Matt Kane <m@mk.gg> (https://mk.gg/)",
+    "license": "MIT",
+    "dependencies": {},
+    "files": [
+        "dist",
+        "*.ts",
+        "demo"
+    ],
+    "devDependencies": {
+        "@types/jest": "^22.2.3",
+        "jest": "^23.0.0",
+        "jest-localstorage-mock": "^2.2.0",
+        "parceljs": "^0.0.1",
+        "ts-jest": "^22.4.6",
+        "tslint": "^5.10.0",
+        "tslint-config-aerian": "^1.0.2",
+        "typescript": "^2.8.3"
+    },
+    "scripts": {
+        "prepublishOnly": "npm run build",
+        "build": "parcel build trackless.ts index.ts",
+        "test": "jest",
+        "build:doc": "jsdoc2md --files 'index.ts' --configure jsdoc2md.json > doc.md"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "setupFiles": [
+            "jest-localstorage-mock"
+        ],
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ]
+    }
+}

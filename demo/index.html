@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <input class='trackless' type='button'>
+    <p>
+        <a href='#' class='trackless'></a>
+    </p>
+    <input class='trackless' type='checkbox'>
+    <label>Tracking enabled</label>
+    <script src="../dist/trackless.js"></script>
+    <script>
+        new Trackless({ trackingID: "foo" }).bindElements();
+    </script>
+</body>
+
+</html>
