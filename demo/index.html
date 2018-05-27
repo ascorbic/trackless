@@ -2,6 +2,24 @@
 <html>
 
 <head>
+    <script async src="../dist/trackless.js"></script>
+    <script>
+        window.TracklessQueue = TracklessQueue || [];
+        TracklessQueue.push(
+            function (Trackless) {
+                new Trackless({ trackingID: "UA-XXX" }).bindElements();
+            }
+        )
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-351894-14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-XXX');
+    </script>
     <title>Document</title>
     <style>
         * {
@@ -17,10 +35,7 @@
     </p>
     <input class='trackless' type='checkbox'>
     <label>Tracking enabled</label>
-    <script src="../dist/trackless.js"></script>
-    <script>
-        new Trackless({ trackingID: "foo" }).bindElements();
-    </script>
+
 </body>
 
 </html>
