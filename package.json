@@ -1,13 +1,19 @@
 {
     "name": "trackless",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Add a Google Analytics opt-out button to your site",
     "main": "dist/index.js",
     "types": "index.d.ts",
     "unpkg": "dist/trackless.js",
+    "homepage": "https://github.com/ascorbic/trackless",
     "repository": "git@github.com:ascorbic/trackless.git",
     "author": "Matt Kane <m@mk.gg> (https://mk.gg/)",
     "license": "MIT",
+    "keywords": [
+        "analytics",
+        "gdpr",
+        "privacy"
+    ],
     "dependencies": {},
     "files": [
         "dist",
