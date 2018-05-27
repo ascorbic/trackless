@@ -1,6 +1,6 @@
 {
     "name": "trackless",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Add a Google Analytics opt-out button to your site",
     "main": "dist/index.js",
     "types": "index.d.ts",
