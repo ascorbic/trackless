@@ -4,7 +4,7 @@
 <head>
     <script async src="../dist/trackless.js"></script>
     <script>
-        window.TracklessQueue = TracklessQueue || [];
+        window.TracklessQueue = window.TracklessQueue || [];
         TracklessQueue.push(
             function (Trackless) {
                 new Trackless({ trackingID: "UA-XXX" }).bindElements();

@@ -45,7 +45,7 @@ head.
 ```html
 <script async src="//unpkg.com/trackless@1"></script>
 <script>
-    window.TracklessQueue = TracklessQueue || [];
+    window.TracklessQueue = window.TracklessQueue || [];
     TracklessQueue.push(
         function (Trackless) {
             new Trackless({ trackingID: "MY_TRACKING_ID" }).bindElements();
