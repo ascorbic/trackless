@@ -33,7 +33,12 @@ export interface Options {
      */
     invertCheckbox?: boolean;
 }
+export declare type TracklassTask = (tl: typeof Trackless) => void;
 export declare class Trackless {
+    /**
+     * Used by the async loader to process the command queue
+     */
+    static processQueue: (queue?: TracklassTask[] | undefined) => void;
     /**
      * Whether this user has opted-out
      */

@@ -1,7 +1,4 @@
-import { Trackless } from "./index";
-const w = window as any;
-const q = w.TracklessQueue;
-if (q && Array.isArray(q)) {
-    q.map(c => c(Trackless));
-    w.TracklessQueue = [];
-}
+import { TracklassTask, Trackless } from "./index";
+const w = window as Window & { TracklessQueue: TracklassTask[] };
+Trackless.processQueue(w.TracklessQueue);
+w.TracklessQueue = [];

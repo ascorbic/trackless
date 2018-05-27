@@ -40,7 +40,7 @@ trackless.bindElements();
 
 When loading from a script tag, place it in the head before your GA tag. We use
 the same method as GA for loading asynchronously, so its safe to load it in the
-head. 
+head. You can either load it directly from unpkg.com, or [download the UMD file](https://unpkg.com/trackless) and host it yourself.
 
 ```html
 <script async src="//unpkg.com/trackless@1"></script>
@@ -107,3 +107,21 @@ Sets the opt-out preference, stores the value in localStorage, and updates all e
 | Param  | Type      | Description      |
 | ------ | --------- | ---------------- |
 | optOut | `boolean` | The optOut value |
+
+
+### `static` processQueue(queue)
+
+Used by the async loader to run queued commands. You shouldn't need to use this yourself unless you are handling your own queue. It should be an array of functions, which are passed the `Trackless` class. The UMD file looks for a `window.TracklessQueue` array, which it passes to this when the script has loaded. If you are loading it as a module you won't get this behaviour, so if you need async processing then this is the way to implement it.
+```js
+Trackless.processQueue(window.TracklessQueue);
+```
+
+| Param | Type    | Description                                                                         |
+| ----- | ------- | ----------------------------------------------------------------------------------- |
+| queue | `array` | An array of callbacks. These are passed the `Trackless` class as the only argument. |
+
+## FAQ
+- **Does this stop the Analytics script from loading?**
+No. The script still loads. However because the opt-out flag is set, Google does not set a cookie or track the visit.
+- **Should I default to opted-out?** I am not a lawyer, but if you want to be totally sure then yes, pass `initialOptOut: true` in the options and it will default to opted-out, and not track the user unless they positively opt in. 
+- **Is this required by the GDPR?** I am not a lawyer. Google allows you to anonymise IP addresses in Analytics (which you should absolutely do), but it still tracks the user via a client ID. It could certainly be argued that this is PII (and I expect some lawyers will be doing just that).

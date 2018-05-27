@@ -52,8 +52,17 @@ const DEFAULT_OPTIONS: Options = {
 function isInput(element: HTMLElement): element is HTMLInputElement {
     return element.tagName.toUpperCase() === "INPUT";
 }
-
+export type TracklassTask = (tl: typeof Trackless) => void;
 export class Trackless {
+    /**
+     * Used by the async loader to process the command queue
+     */
+    public static processQueue = (queue?: TracklassTask[]) => {
+        if (queue && Array.isArray(queue)) {
+            queue.map(c => c(Trackless));
+        }
+    };
+
     /**
      * Whether this user has opted-out
      */
