@@ -43,7 +43,7 @@ the same method as GA for loading asynchronously, so its safe to load it in the
 head. 
 
 ```html
-<script async src="//unpkg.com/trackless"></script>
+<script async src="//unpkg.com/trackless@1"></script>
 <script>
     window.TracklessQueue = TracklessQueue || [];
     TracklessQueue.push(
