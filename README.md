@@ -18,6 +18,9 @@ should be loaded before the Google Analytics script.
 
 ## How to use
 
+[![npm](https://img.shields.io/npm/dt/trackless.svg)](https://www.npmjs.com/package/trackless)
+[![GitHub issues](https://img.shields.io/github/issues/ascorbic/trackless.svg)](https://github.com/ascorbic/trackless/issues)
+
 The script can either be loaded as a module if you are using a bundler, or
 directly from a script tag.
 
